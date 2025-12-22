@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+  
+  body {
+    @apply bg-black text-white antialiased overflow-x-hidden;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+  }
+}
+
+.controlsShadow {
+  box-shadow: inset 0 calc(-9 * clamp(8px, 14px, 11px)) calc(3 * clamp(8px, 14px, 11px)) calc(-6 * clamp(8px, 14px, 11px)) hsl(0 0% 0% / 0.35), inset 0 calc(-18 * clamp(8px, 14px, 11px)) calc(6 * clamp(8px, 14px, 11px)) calc(-12 * clamp(8px, 14px, 11px)) hsl(0 0% 0% / 0.35), inset 0 calc(-27 * clamp(8px, 14px, 11px)) calc(9 * clamp(8px, 14px, 11px)) calc(-18 * clamp(8px, 14px, 11px)) hsl(0 0% 0% / 0.35);
+}
+
+/* Smooth transitions for interactive elements */
+button, a {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+/* Enhanced focus styles */
+*:focus-visible {
+  @apply outline-none ring-2 ring-offset-2 ring-white ring-offset-black;
+}
+
+/* Custom scrollbar - black and white theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/30;
+}
