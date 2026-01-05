@@ -22,17 +22,20 @@ const SignIn = ({
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-[#f9fafb]">
-        <div className="bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10">
+      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-orange-50 to-white">
+        <div className="bg-white px-8 py-10 shadow-soft rounded-2xl sm:px-12 border border-gray-100">
           <div className="animate-fade-in flex flex-col justify-center text-center">
-            <span className="text-sm font-medium text-gray-700">
-              Sign in with
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              Welcome to <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Chitram</span>
+            </h2>
+            <span className="text-sm font-medium text-gray-600 mb-6">
+              Sign in to continue
             </span>
             <div className="mt-6 grid grid-cols-2 gap-3">
               {Object.values(providers).map((provider) => (
                 <button
                   key={provider.id}
-                  className="relative inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-6 py-3 text-lg text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50"
+                  className="relative inline-flex items-center justify-center rounded-xl border-2 border-gray-200 bg-white px-6 py-3 text-lg text-sm font-semibold text-gray-700 shadow-md hover:bg-gray-50 hover:border-orange-300 transition-all"
                   type="button"
                   onClick={() =>
                     void signIn(provider.id, {
@@ -48,8 +51,8 @@ const SignIn = ({
             </div>
             <p className="prose prose-sm mx-auto mt-6 max-w-[18rem] text-xs text-gray-500">
               By signing in, you agree to our{" "}
-              <Link href="/legal/terms">Terms of Service</Link> and{" "}
-              <Link href="/legal/privacy-policy">Privacy Policy</Link>.
+              <Link href="/legal/terms" className="text-orange-500 hover:text-orange-600 font-medium">Terms of Service</Link> and{" "}
+              <Link href="/legal/privacy-policy" className="text-orange-500 hover:text-orange-600 font-medium">Privacy Policy</Link>.
             </p>
           </div>
         </div>

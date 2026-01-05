@@ -26,7 +26,7 @@ export default function Pricing() {
   return (
     <>
       <Head>
-        <title>Chitram | Pricing</title>
+        <title>Snapify | Pricing</title>
         <meta
           name="description"
           content="Share high-quality videos asynchronously and collaborate on your own schedule"
@@ -38,33 +38,36 @@ export default function Pricing() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="my-20 flex h-40 flex-col items-center justify-center sm:mx-10 lg:mx-20 bg-black"
+        className="my-20 flex h-40 flex-col items-center justify-center sm:mx-10 lg:mx-20 bg-white"
       >
-        <span className="text-center text-4xl font-bold lg:text-7xl text-white">
-          Choose the plan that fits your needs.
+        <span className="text-center text-4xl font-bold lg:text-7xl text-gray-900">
+          Choose the plan that{" "}
+          <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+            fits your needs
+          </span>
         </span>
       </motion.div>
 
       <div className="-mt-10 mb-10 flex flex-col items-center justify-center sm:mx-10 lg:mx-20">
         <div className="z-10 mt-4 flex items-center gap-2 lg:mt-8">
           <div
-            className="relative flex w-full rounded-full border border-white/20 bg-white/5"
+            className="relative flex w-full rounded-full border border-gray-200 bg-gray-50"
             onClick={toggleBillingCycle}
           >
             <button
-              className={`rounded-full border border-white/20 px-4 py-2 text-sm font-medium text-white shadow-sm transition focus:z-10 focus:outline-none focus:ring-0 sm:w-auto ${
-                billedAnnually ? "" : "bg-white text-black"
+              className={`rounded-full border border-gray-200 px-4 py-2 text-sm font-medium shadow-sm transition focus:z-10 focus:outline-none focus:ring-0 sm:w-auto ${
+                billedAnnually ? "text-gray-700" : "bg-orange-500 text-white"
               }`}
             >
               <span>Monthly</span>
             </button>
             <button
-              className={`ml-0.5 rounded-full border border-transparent px-4 py-2 text-sm font-medium text-white transition duration-150 focus:z-10 focus:ring-0 sm:w-auto ${
-                billedAnnually ? "bg-white text-black" : ""
+              className={`ml-0.5 rounded-full border border-transparent px-4 py-2 text-sm font-medium transition duration-150 focus:z-10 focus:ring-0 sm:w-auto ${
+                billedAnnually ? "bg-orange-500 text-white" : "text-gray-700"
               }`}
             >
               <span>Annually</span>
-              <span className="ml-2 rounded-lg bg-white/20 p-1 text-xs font-normal">
+              <span className="ml-2 rounded-lg bg-white/30 p-1 text-xs font-normal">
                 -20%
               </span>
             </button>
@@ -73,7 +76,7 @@ export default function Pricing() {
       </div>
 
       <div className="relative mx-4 mb-20 flex flex-col items-start justify-center gap-12 md:flex-row md:gap-4 lg:mx-16 lg:gap-16">
-        <div className="absolute left-[calc(50%_-_calc(min(75vw,500px)_/_2))] h-[min(75vw,500px)] w-[min(75vw,500px)] bg-[radial-gradient(circle_at_center,#666_0,#fff_100%)] opacity-80 blur-[calc(0.5_*_min(75vw,500px))]"></div>
+        <div className="absolute left-[calc(50%_-_calc(min(75vw,500px)_/_2))] h-[min(75vw,500px)] w-[min(75vw,500px)] bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.1)_0,transparent_100%)] opacity-80 blur-[calc(0.5_*_min(75vw,500px))]"></div>
         {[
           {
             name: "Pro",
@@ -94,7 +97,7 @@ export default function Pricing() {
               {
                 feature: "External video upload",
                 description:
-                  "Upload videos recorded using other tools or platforms to your Chitram library.",
+                  "Upload videos recorded using other tools or platforms to your Snapify library.",
                 included: true,
               },
             ],
@@ -107,31 +110,31 @@ export default function Pricing() {
             viewport={{ once: true }}
             transition={{ delay: index * 0.2, duration: 0.5 }}
             whileHover={{ scale: 1.02, y: -5 }}
-            className="relative w-full max-w-[400px] flex-1 rounded-3xl border border-white/10 bg-black shadow-sm transition-shadow hover:shadow-xl hover:border-white/20"
+            className="relative w-full max-w-[400px] flex-1 rounded-3xl border border-gray-200 bg-white shadow-lg transition-all hover:shadow-xl hover:border-orange-300"
           >
             {name === "Pro" ? (
-              <div className="absolute -top-6 left-2/4 z-[1] mt-0 -translate-x-2/4 cursor-default select-none rounded-3xl border-0 border-solid border-white/20 bg-white px-[22px] py-3.5 text-black shadow-[0_8px_30px_rgba(255,255,255,0.2)] backdrop-blur-[2px]">
+              <div className="absolute -top-6 left-2/4 z-[1] mt-0 -translate-x-2/4 cursor-default select-none rounded-3xl border-0 border-solid border-orange-200 bg-gradient-to-r from-orange-500 to-orange-600 px-[22px] py-3.5 text-white shadow-[0_8px_30px_rgba(249,115,22,0.3)] backdrop-blur-[2px]">
                 <span className="text-xs font-bold">Most Popular</span>
               </div>
             ) : null}
-            <div className="hero relative flex flex-col items-start rounded-3xl px-6 py-6 shadow-sm">
-              <div className="rounded-lg bg-white/10 px-2 font-medium text-white">
+            <div className="hero relative flex flex-col items-start rounded-3xl px-6 py-6">
+              <div className="rounded-lg bg-orange-100 px-2 font-medium text-orange-600">
                 {name}
               </div>
-              <div className="mb-2 mt-4 flex items-end text-5xl font-extrabold tracking-tight text-white">
+              <div className="mb-2 mt-4 flex items-end text-5xl font-extrabold tracking-tight text-gray-900">
                 {billedAnnually ? price.annual : price.monthly}
                 <span className="mb-1 text-sm opacity-80">/ mo.</span>
               </div>
-              <div className="mt-2 text-sm text-white/60">
+              <div className="mt-2 text-sm text-gray-600">
                 {billedAnnually ? "billed annually" : "billed monthly"}
               </div>
               <div className="mt-2 flex-grow" />
               <motion.button
-                whileHover={{ scale: 1.02, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.3)" }}
+                whileHover={{ scale: 1.02, boxShadow: "0 10px 25px rgba(249, 115, 22, 0.3)" }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => void signIn()}
                 type="submit"
-                className="btn mt-4 block w-full appearance-none rounded-lg bg-white px-4 py-2.5 text-center text-sm font-medium text-black shadow-lg duration-100 hover:bg-white/90 focus:outline-transparent disabled:opacity-80 transition-all"
+                className="btn mt-4 block w-full appearance-none rounded-lg bg-orange-500 px-4 py-2.5 text-center text-sm font-medium text-white shadow-lg duration-100 hover:bg-orange-600 focus:outline-transparent disabled:opacity-80 transition-all"
               >
                 Get started
               </motion.button>
@@ -140,14 +143,14 @@ export default function Pricing() {
               {features.map(({ feature, description, included }) => (
                 <div
                   key={feature}
-                  className="flex items-center gap-2 text-white/70"
+                  className="flex items-center gap-2 text-gray-600"
                 >
-                  <div className="ml-6 h-5 w-5 flex-none text-white">
+                  <div className="ml-6 h-5 w-5 flex-none text-orange-500">
                     {included ? <CheckIcon /> : <XMarkIcon />}
                   </div>
 
                   <Tooltip title={description}>
-                    <div className="text-base text-white/70 underline decoration-white/30 decoration-dashed underline-offset-4">
+                    <div className="text-base text-gray-700 underline decoration-gray-300 decoration-dashed underline-offset-4">
                       {feature}
                     </div>
                   </Tooltip>
@@ -163,16 +166,16 @@ export default function Pricing() {
           viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 0.5 }}
           whileHover={{ scale: 1.02, y: -5 }}
-          className="relative w-full max-w-[400px] flex-1 rounded-3xl border bg-white shadow-sm transition-shadow hover:shadow-xl"
+          className="relative w-full max-w-[400px] flex-1 rounded-3xl border border-gray-200 bg-white shadow-lg transition-all hover:shadow-xl hover:border-orange-300"
         >
-          <div className="hero relative flex flex-col items-start rounded-3xl px-6 py-6 shadow-sm">
-            <div className="rounded-lg bg-white/20 px-2 font-medium">
+          <div className="hero relative flex flex-col items-start rounded-3xl px-6 py-6">
+            <div className="rounded-lg bg-gray-100 px-2 font-medium text-gray-700">
               Enterprise
             </div>
-            <div className="mb-2 mt-4 flex items-end text-5xl font-extrabold tracking-tight">
+            <div className="mb-2 mt-4 flex items-end text-5xl font-extrabold tracking-tight text-gray-900">
               Custom
             </div>
-            <div className="mt-2 text-sm">
+            <div className="mt-2 text-sm text-gray-600">
               Contact us for a custom quote and a custom onboarding process.
             </div>
             <div className="mt-2 flex-grow" />
@@ -181,7 +184,7 @@ export default function Pricing() {
               onClick={() =>
                 posthog?.capture("clicked contact enterprise plan")
               }
-              className="btn mt-4 block w-full appearance-none rounded-lg bg-gradient-to-r from-sky-500 to-sky-600 px-4 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-sky-500/50 duration-100 hover:from-sky-600 hover:to-sky-700 focus:outline-transparent disabled:opacity-80 transition-all"
+              className="btn mt-4 block w-full appearance-none rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 px-4 py-2.5 text-center text-sm font-medium text-white shadow-lg shadow-orange-500/30 duration-100 hover:from-orange-600 hover:to-orange-700 focus:outline-transparent disabled:opacity-80 transition-all"
             >
               Contact
             </Link>
@@ -189,9 +192,9 @@ export default function Pricing() {
         </motion.div>
       </div>
 
-      <div className="flex flex-col items-center justify-center border-y border-white/10 bg-black pb-8">
+      <div className="flex flex-col items-center justify-center border-y border-gray-200 bg-gray-50 pb-8">
         <div className="mb-12 mt-8">
-          <span className="text-5xl font-bold text-white">FAQs</span>
+          <span className="text-5xl font-bold text-gray-900">FAQs</span>
         </div>
         <div className="flex flex-1 border-collapse flex-col justify-center px-6">
           {[
@@ -202,7 +205,7 @@ export default function Pricing() {
             },
             {
               question: "Can I import videos I already recorded?",
-              answer: "Yes! Chitram allows you to import your existing videos.",
+              answer: "Yes! Snapify allows you to import your existing videos.",
             },
             {
               question: "How do I contact Support?",
@@ -217,10 +220,10 @@ export default function Pricing() {
             >
               {({ open }) => (
                 <>
-                  <Disclosure.Button className="flex h-12 w-full items-center justify-between border-t border-white/10 px-4 py-8 text-left text-sm font-medium text-white">
+                  <Disclosure.Button className="flex h-12 w-full items-center justify-between border-t border-gray-200 px-4 py-8 text-left text-sm font-medium text-gray-900 hover:text-orange-500 transition-colors">
                     <span>{question}</span>
                     <ChevronUpIcon
-                      className={`transition-transform ${
+                      className={`transition-transform text-orange-500 ${
                         open ? "rotate-180" : ""
                       } h-5 w-5`}
                     />
@@ -233,7 +236,7 @@ export default function Pricing() {
                     leaveFrom="transform scale-100 opacity-100"
                     leaveTo="transform scale-95 opacity-0"
                   >
-                    <Disclosure.Panel className="px-4 pb-2 pt-0 text-sm text-white/70">
+                    <Disclosure.Panel className="px-4 pb-2 pt-0 text-sm text-gray-600">
                       {answer}
                     </Disclosure.Panel>
                   </Transition>
