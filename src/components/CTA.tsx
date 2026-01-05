@@ -62,7 +62,7 @@ export default function CTA() {
                 posthog?.capture("clicked schedule demo", { cta: true })
               }
               target="_blank"
-              href="https://cal.com/marcon/chitram-demo"
+              href="https://cal.com/hemanth/chitram-demo"
               className="text-sm font-semibold leading-6 text-white transition-colors hover:text-white/70"
             >
               Schedule Demo <span aria-hidden="true">→</span>
