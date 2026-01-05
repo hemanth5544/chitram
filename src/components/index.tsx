@@ -128,7 +128,7 @@ const Home: NextPage = () => {
                       whileTap={{ scale: 0.95 }}
                       onClick={() => posthog?.capture("clicked schedule demo")}
                       target="_blank"
-                      href="https://cal.com/marcon/chitram-demo"
+                      href="https://cal.com/hemanth/chitram-demo"
                       className="text-sm font-semibold leading-6 text-sky-600 transition-colors hover:text-sky-700"
                     >
                       Book a demo{" "}
